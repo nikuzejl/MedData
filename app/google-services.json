@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "707702555769",
+    "firebase_url": "https://meddata-80f7b.firebaseio.com",
+    "project_id": "meddata-80f7b",
+    "storage_bucket": "meddata-80f7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707702555769:android:dbeadc6b34a0c1f9bec0a8",
+        "android_client_info": {
+          "package_name": "com.example.meddata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707702555769-jbid7ck3re102pgms2bb46i59a5qvro5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meddata",
+            "certificate_hash": "f4e0c1b06d7393fa5eb1464d7f0e6ca0470f5a60"
+          }
+        },
+        {
+          "client_id": "707702555769-50g0757k9bgpmlc2lqsoesametomkp6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDORZvRwT8hTFjQFjUE3KpsqOg-l0a5cLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707702555769-50g0757k9bgpmlc2lqsoesametomkp6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

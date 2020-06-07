@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MedData</string>
+    <string name="date">MM/DD/YYYY</string>
+    <string name="hospital">Hospital name</string>
+    <string name="doctor">Doctor name</string>
+    <string name="tests">Tests</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="treatment">Treatment/Drugs</string>
+    <string name="comments">Please enter other notes here as needed</string>
+
+</resources>
