@@ -51,82 +51,88 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    StorageReference mStorageRef;
 
-    private Button AddNewButton, RetrieveDataButton, DownloadButton;
+
+    private Button AddNewButton, RetrieveDataButton;
+
 
     private FirebaseDatabase myFirebaseDatabase;
     private DatabaseReference typedVisits;
-    private TextView Tdate, Thospital, Tdoctor, Ttests, Tdiagnosis, Ttreatment, Tcomments;
-    DatabaseReference reff;
+    //private TextView Tdate, Thospital, Tdoctor, Ttests, Tdiagnosis, Ttreatment, Tcomments;
+    //DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DownloadButton = findViewById(R.id.download);
-
-        DownloadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                download();
-            }
-        });
+//        DownloadButton = findViewById(R.id.download);
+//
+//        DownloadButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                download();
+//            }
+//        });
+//        RetrieveDataButton = (Button) findViewById(R.id.retr_button);
+//        Thospital = (TextView)  findViewById(R.id.hospital);
+//
+//        Tdate = findViewById(R.id.date);
+//        Tdoctor = findViewById(R.id.doctor);
+//        Ttests = findViewById(R.id.tests);
+//        Tdiagnosis = findViewById(R.id.diagnosis);
+//        Ttreatment = findViewById(R.id.treatment);
+//        Tcomments = findViewById(R.id.comments);
+//
+//        myFirebaseDatabase = FirebaseDatabase.getInstance();
+//        typedVisits = myFirebaseDatabase.getReference().child("forms");
 
         AddNewButton = (Button) findViewById(R.id.add_new_button);
-        RetrieveDataButton = (Button) findViewById(R.id.retr_button);
-        Thospital = (TextView)  findViewById(R.id.hospital);
-
-        Tdate = findViewById(R.id.date);
-        Tdoctor = findViewById(R.id.doctor);
-        Ttests = findViewById(R.id.tests);
-        Tdiagnosis = findViewById(R.id.diagnosis);
-        Ttreatment = findViewById(R.id.treatment);
-        Tcomments = findViewById(R.id.comments);
-
-        myFirebaseDatabase = FirebaseDatabase.getInstance();
-        typedVisits = myFirebaseDatabase.getReference().child("forms");
-
-        AddNewButton.setOnClickListener(new View.OnClickListener(){
+        AddNewButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 AddNewButton();
             }
         });
 
-        RetrieveDataButton.setOnClickListener(new View.OnClickListener(){
+        RetrieveDataButton = (Button) findViewById((R.id.retr_button));
+        RetrieveDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                reff = FirebaseDatabase.getInstance().getReference().child("forms").child("-M9B64ScYFp5_DUME0hN");
-                reff.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String hospital = dataSnapshot.child("hospital").getValue().toString();
-                        String doctor = dataSnapshot.child("doctor").getValue().toString();
-                        String tests = dataSnapshot.child("tests").getValue().toString();
-                        String treatment= dataSnapshot.child("treatment").getValue().toString();
-                        String diagnosis = dataSnapshot.child("diagnosis").getValue().toString();
-                        String comments = dataSnapshot.child("comments").getValue().toString();
-                        String date = dataSnapshot.child("date").getValue().toString();
-
-                        Tdate.setText(date);
-                        Thospital.setText(hospital);
-                        Tdoctor.setText(doctor);
-                        Ttests.setText(tests);
-                        Tdiagnosis.setText(diagnosis);
-                        Ttreatment.setText(treatment);
-                        Tcomments.setText(comments);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
+            public void onClick(View v) {
+                Retrieve_Visit();
             }
         });
+    }
+
+//                reff = FirebaseDatabase.getInstance().getReference().child("forms").child("-M9B64ScYFp5_DUME0hN");
+//                reff.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        String hospital = dataSnapshot.child("hospital").getValue().toString();
+//                        String doctor = dataSnapshot.child("doctor").getValue().toString();
+//                        String tests = dataSnapshot.child("tests").getValue().toString();
+//                        String treatment= dataSnapshot.child("treatment").getValue().toString();
+//                        String diagnosis = dataSnapshot.child("diagnosis").getValue().toString();
+//                        String comments = dataSnapshot.child("comments").getValue().toString();
+//                        String date = dataSnapshot.child("date").getValue().toString();
+//
+//                        Tdate.setText(date);
+//                        Thospital.setText(hospital);
+//                        Tdoctor.setText(doctor);
+//                        Ttests.setText(tests);
+//                        Tdiagnosis.setText(diagnosis);
+//                        Ttreatment.setText(treatment);
+//                        Tcomments.setText(comments);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//
+//            }
+//        });
 
         //Todo: Sign in part
         /*
@@ -141,39 +147,38 @@ public class MainActivity extends AppCompatActivity {
                 RC_SIGN_IN);
 
          */
-    }
 
-    public void download(){
-        mStorageRef = FirebaseStorage.getInstance().getReference().child("1591232879641.jpg");
-        mStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String url = uri.toString();
-                downloadFile(MainActivity.this,"Burundi", ".jpg", DIRECTORY_DOWNLOADS , url);
-            }
-        });
+//    public void download(){
+//        mStorageRef = FirebaseStorage.getInstance().getReference().child("1591232879641.jpg");
+//        mStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                String url = uri.toString();
+//                downloadFile(MainActivity.this,"Burundi", ".jpg", DIRECTORY_DOWNLOADS , url);
+//            }
+//        });
+//
+//    }
 
-    }
-
-    public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url ){
-        DownloadManager downloadManager =(DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri = Uri.parse(url);
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-
-        request.setNotificationVisibility((DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED));
-        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
-
-        downloadManager.enqueue(request);
-
-    }
+//    public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url ){
+//        DownloadManager downloadManager =(DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+//        Uri uri = Uri.parse(url);
+//        DownloadManager.Request request = new DownloadManager.Request(uri);
+//
+//        request.setNotificationVisibility((DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED));
+//        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
+//
+//        downloadManager.enqueue(request);
+//
+//    }
 
     public void AddNewButton(){
         Intent intent = new Intent(this, AddNew.class);
         startActivity(intent);
     }
 
-    public void RetrieveData (){
-        Intent intent = new Intent(this, RetrieveData.class);
+    public void Retrieve_Visit (){
+        Intent intent = new Intent(this, Retrieve_Visit.class);
         startActivity(intent);
     }
 }

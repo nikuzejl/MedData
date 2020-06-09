@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddNew"/>
-        <activity android:name=".RetrieveData"/>
-        <activity android:name=".UploadDoc"/>
+        <activity android:name=".Retrieve_Visit"/>
         <activity android:name=".ManualData"/>
 
 
