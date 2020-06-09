@@ -1,48 +1,61 @@
 package com.example.meddata;
 
 import android.os.Bundle;
-import android.util.Log;
-
+import android.widget.ListView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.database.DataSnapshot;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Retrieve_Visit extends AppCompatActivity {
+    private FirebaseDatabase db;
+    private DatabaseReference dbRef;
+    private VisitAdapter visitAdapter;
+    private ChildEventListener mChildEventListener;
 
-    //DownloadButton;
-
-    StorageReference mStorageRef;
-    DatabaseReference reff;
-    private static final String TAG = "MainActivity";
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mDbRef;
-    private String userId;
-    DataSnapshot mDataSnapshot;
+    private ListView allVisits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.retrieve_visit);
+        allVisits = (ListView) findViewById(R.id.all_visits);
 
-//    // Write a message to the database
-//        mDatabase = FirebaseDatabase.getInstance();
-//        mDbRef = mDatabase.getReference("forms");
-//
-//    //Setting firebase unique key for Hashmap list
-//        String userId = mDbRef.push().getKey();
-//    // creating user object
-//        Visit visit = new Visit("WHATTTTTTTTTT", "hillary@xyz.com", "gfagag", "Tokyo", "fagagag", "fagqgq", "fagqhqh");
-//
-//        mDbRef.child(userId).setValue(visit);
-//
-//        for (DataSnapshot child : mDataSnapshot.getChildren()) {
-//            Log.i(TAG, child.getKey());
-//            Log.i(TAG, child.getValue(String.class));
-//        }
+        db = FirebaseDatabase.getInstance();
+        dbRef = db.getReference().child("forms");
+
+        List<Visit> visits_list = new ArrayList<>();
+        visitAdapter= new VisitAdapter(this, R.layout.retrieve_visit, visits_list);
+        allVisits.setAdapter(visitAdapter);
+
+        if(mChildEventListener == null) {
+            mChildEventListener = new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    Visit visit = dataSnapshot.getValue(Visit.class);
+                    visitAdapter.add(visit);
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) { }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) { }
+            };
+            dbRef.addChildEventListener(mChildEventListener);
+        }
     }
 }
 

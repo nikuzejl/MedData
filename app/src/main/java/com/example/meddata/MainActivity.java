@@ -49,43 +49,13 @@ import java.util.Map;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class MainActivity extends AppCompatActivity {
-
     private static final String TAG = "MainActivity";
-
-
     private Button AddNewButton, RetrieveDataButton;
-
-
-    private FirebaseDatabase myFirebaseDatabase;
-    private DatabaseReference typedVisits;
-    //private TextView Tdate, Thospital, Tdoctor, Ttests, Tdiagnosis, Ttreatment, Tcomments;
-    //DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        DownloadButton = findViewById(R.id.download);
-//
-//        DownloadButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                download();
-//            }
-//        });
-//        RetrieveDataButton = (Button) findViewById(R.id.retr_button);
-//        Thospital = (TextView)  findViewById(R.id.hospital);
-//
-//        Tdate = findViewById(R.id.date);
-//        Tdoctor = findViewById(R.id.doctor);
-//        Ttests = findViewById(R.id.tests);
-//        Tdiagnosis = findViewById(R.id.diagnosis);
-//        Ttreatment = findViewById(R.id.treatment);
-//        Tcomments = findViewById(R.id.comments);
-//
-//        myFirebaseDatabase = FirebaseDatabase.getInstance();
-//        typedVisits = myFirebaseDatabase.getReference().child("forms");
 
         AddNewButton = (Button) findViewById(R.id.add_new_button);
         AddNewButton.setOnClickListener(new View.OnClickListener() {
@@ -103,36 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-//                reff = FirebaseDatabase.getInstance().getReference().child("forms").child("-M9B64ScYFp5_DUME0hN");
-//                reff.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        String hospital = dataSnapshot.child("hospital").getValue().toString();
-//                        String doctor = dataSnapshot.child("doctor").getValue().toString();
-//                        String tests = dataSnapshot.child("tests").getValue().toString();
-//                        String treatment= dataSnapshot.child("treatment").getValue().toString();
-//                        String diagnosis = dataSnapshot.child("diagnosis").getValue().toString();
-//                        String comments = dataSnapshot.child("comments").getValue().toString();
-//                        String date = dataSnapshot.child("date").getValue().toString();
-//
-//                        Tdate.setText(date);
-//                        Thospital.setText(hospital);
-//                        Tdoctor.setText(doctor);
-//                        Ttests.setText(tests);
-//                        Tdiagnosis.setText(diagnosis);
-//                        Ttreatment.setText(treatment);
-//                        Tcomments.setText(comments);
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
-//
-//            }
-//        });
 
         //Todo: Sign in part
         /*
