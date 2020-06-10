@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-        //Todo: Sign in part
+    //Todo: Sign in part
         /*
         startActivityForResult(
                 AuthUI.getInstance()
@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                                 new AuthUI.IdpConfig.GoogleBuilder().build()))
                         .build(),
                 RC_SIGN_IN);
-
          */
 
 //    public void download(){
@@ -122,4 +121,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-

@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".AddNew"/>
         <activity android:name=".Retrieve_Visit"/>
+        <activity android:name=".Display_Visit"/>
         <activity android:name=".ManualData"/>
     </application>
 
