@@ -2,6 +2,7 @@ package com.example.meddata;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,12 +18,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -155,8 +159,16 @@ public class Retrieve_Visit extends AppCompatActivity {
                 String path = documentSnapshot.getReference().getPath();
                 Toast.makeText(Retrieve_Visit.this,
                         "Position: " + position + " ID: " + id, Toast.LENGTH_SHORT).show();
+
+                displayVisit(id);
             }
         });
+    }
+
+    public void displayVisit(String s){
+        Intent intent = new Intent(this, DetailedVisit.class);
+        intent.putExtra("visitAddress", s);
+        startActivity(intent);
     }
 
     @Override

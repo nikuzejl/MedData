@@ -16,10 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddNew"/>
-        <activity android:name=".Retrieve_Visit"/>
-        <activity android:name=".Display_Visit"/>
-        <activity android:name=".ManualData"/>
+        <activity android:name=".AddNew" />
+        <activity android:name=".Retrieve_Visit" />
+        <activity android:name=".DetailedVisit"/>
+        <activity android:name=".Display_Visit" />
+        <activity android:name=".ManualData" />
     </application>
 
 </manifest>
