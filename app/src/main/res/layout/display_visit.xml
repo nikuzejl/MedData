@@ -17,8 +17,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/comments"
+        app:layout_constraintEnd_toStartOf="@+id/comments"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -30,8 +30,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName4"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/treatment"
+        app:layout_constraintEnd_toStartOf="@+id/treatment"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -43,8 +43,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName5"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/diagnosis"
+        app:layout_constraintEnd_toStartOf="@+id/diagnosis"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -56,8 +56,8 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName6"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName6"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tests"
+        app:layout_constraintEnd_toStartOf="@+id/tests"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -69,8 +69,8 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName7"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/doctor"
+        app:layout_constraintEnd_toStartOf="@+id/doctor"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -82,8 +82,8 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/date"
+        app:layout_constraintEnd_toStartOf="@+id/date"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -94,7 +94,7 @@
         android:layout_marginLeft="7dp"
         android:layout_marginTop="11dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,12 +107,12 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName8"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/hospital"
+        app:layout_constraintEnd_toStartOf="@+id/hospital"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/date"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -121,13 +121,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName8"
+        app:layout_constraintBottom_toTopOf="@+id/hospital"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/comments"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -139,10 +139,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/treatment" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/treatment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -151,13 +151,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toTopOf="@+id/comments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/diagnosis" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/diagnosis"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -166,13 +166,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBottom_toTopOf="@+id/treatment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/tests" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/tests"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -181,13 +181,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
+        app:layout_constraintBottom_toTopOf="@+id/diagnosis"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintTop_toBottomOf="@+id/doctor"
+        />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/doctor"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -195,13 +196,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName6"
+        app:layout_constraintBottom_toTopOf="@+id/tests"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintTop_toBottomOf="@+id/hospital" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/hospital"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -210,8 +211,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
+        app:layout_constraintBottom_toTopOf="@+id/doctor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/date" />
 </androidx.constraintlayout.widget.ConstraintLayout>
