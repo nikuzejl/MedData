@@ -26,11 +26,11 @@ public class New_VisitAdapter extends FirestoreRecyclerAdapter<Visit, New_VisitA
     protected void onBindViewHolder(@NonNull VisitHolder holder, int position, @NonNull Visit model) {
         holder.textViewDate.setText(model.getDate());
         holder.textViewHospital.setText(model.getHospital());
-        holder.textViewDoctor.setText(model.getDoctor());
-        holder.textViewTests.setText(model.getTests());
-        holder.textViewDiagnosis.setText(model.getDiagnosis());
-        holder.textViewTreatment.setText(model.getTreatment());
-        holder.textViewComments.setText(model.getComments());
+//        holder.textViewDoctor.setText(model.getDoctor());
+//        holder.textViewTests.setText(model.getTests());
+//        holder.textViewDiagnosis.setText(model.getDiagnosis());
+//        holder.textViewTreatment.setText(model.getTreatment());
+//        holder.textViewComments.setText(model.getComments());
 
     }
 
@@ -48,24 +48,23 @@ public class New_VisitAdapter extends FirestoreRecyclerAdapter<Visit, New_VisitA
 
     class VisitHolder extends RecyclerView.ViewHolder {
         TextView textViewDate;
-        TextView textViewDoctor;
         TextView textViewHospital;
-        TextView textViewTests;
-        TextView textViewDiagnosis;
-        TextView textViewTreatment;
-        TextView textViewComments;
+//        TextView textViewDoctor;
+//        TextView textViewTests;
+//        TextView textViewDiagnosis;
+//        TextView textViewTreatment;
+//        TextView textViewComments;
 
 
         public VisitHolder(View itemView) {
             super(itemView);
             textViewDate = itemView.findViewById(R.id.date);
-            textViewDoctor = itemView.findViewById(R.id.doctor);
             textViewHospital = itemView.findViewById(R.id.hospital);
-            textViewTests = itemView.findViewById(R.id.tests);
-            textViewDiagnosis = itemView.findViewById(R.id.diagnosis);
-            textViewTreatment = itemView.findViewById(R.id.treatment);
-            textViewComments = itemView.findViewById(R.id.comments);
-
+//            textViewDoctor = itemView.findViewById(R.id.doctor);
+//            textViewTests = itemView.findViewById(R.id.tests);
+//            textViewDiagnosis = itemView.findViewById(R.id.diagnosis);
+//            textViewTreatment = itemView.findViewById(R.id.treatment);
+//            textViewComments = itemView.findViewById(R.id.comments);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

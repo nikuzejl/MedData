@@ -157,9 +157,8 @@ public class Retrieve_Visit extends AppCompatActivity {
                 Visit visit = documentSnapshot.toObject(Visit.class);
                 String id = documentSnapshot.getId();
                 String path = documentSnapshot.getReference().getPath();
-                Toast.makeText(Retrieve_Visit.this,
-                        "Position: " + position + " ID: " + id, Toast.LENGTH_SHORT).show();
-
+               // Toast.makeText(Retrieve_Visit.this,
+               //         "Position: " + position + " ID: " + id, Toast.LENGTH_SHORT).show();
                 displayVisit(id);
             }
         });
@@ -183,10 +182,5 @@ public class Retrieve_Visit extends AppCompatActivity {
         new_visitAdapter.stopListening();
     }
 
-//    public void displayVisit(String s){
-//        Intent intent = new Intent(this, Display_Visit.class);
-//        intent.putExtra("visitAddress", s);
-//        startActivity(intent);
-//    }
 }
 

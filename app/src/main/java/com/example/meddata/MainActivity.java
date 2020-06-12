@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //Todo: Sign in part
+    //Todo: Google/email Sign in part
         /*
         startActivityForResult(
                 AuthUI.getInstance()
