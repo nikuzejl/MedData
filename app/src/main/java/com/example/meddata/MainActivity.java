@@ -59,15 +59,21 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     //private Button AddNewButton, RetrieveDataButton;
-    RecyclerView dataList;
-    Adapter adapter;
+    private RecyclerView dataList;
+    private Adapter adapter;
+    public static Editable saved_notes;
+    public static HashMap<String, Editable> profile_info= new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
