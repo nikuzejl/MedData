@@ -9,14 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,27 +28,15 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Retrieve_Visit extends AppCompatActivity {
     private FirebaseDatabase db;
-      private FirebaseFirestore dbFS = FirebaseFirestore.getInstance();
     private DatabaseReference dbRef;
-    private VisitAdapter visitAdapter;
+    private FirebaseFirestore dbFS = FirebaseFirestore.getInstance();
     private New_VisitAdapter new_visitAdapter;
-    private ChildEventListener mChildEventListener;
-       private CollectionReference dbFScollections = dbFS.collection("forms");
-
-    private ListView allVisits;
-
-    ////
-//    ListView listView;
-//    TextView textView;
-//    String[] listItem;
-
-    ///
+    private CollectionReference dbFScollections = dbFS.collection("forms");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,70 +44,6 @@ public class Retrieve_Visit extends AppCompatActivity {
         setContentView(R.layout.retrieve_visit);
 
         setUpRecyclerView();
-        ////keeeeep this
-  /*
-        allVisits = (ListView) findViewById(R.id.all_visits);
-
-        db = FirebaseDatabase.getInstance();
-        dbRef = db.getReference().child("forms");
-
-        List<Visit> visits_list = new ArrayList<>();
-        visitAdapter= new VisitAdapter(this, R.layout.retrieve_visit, visits_list);
-        allVisits.setAdapter(visitAdapter);
-
-        if(mChildEventListener == null) {
-            mChildEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                    Visit visit = dataSnapshot.getValue(Visit.class);
-                    visitAdapter.add(visit);
-                }
-
-                @Override
-                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
-
-                @Override
-                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) { }
-
-                @Override
-                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) { }
-            };
-            dbRef.addChildEventListener(mChildEventListener);
-        }
-
-        allVisits.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //displayVisit(visit_address);
-
-
-               Toast.makeText(getApplicationContext(),"Click ListItem Number " + position, Toast.LENGTH_LONG).show();
-            }
-        });
-
-  */
-
-////////
-//        listView=(ListView)findViewById(R.id.all_visits);
-//        textView=(TextView)findViewById(R.id.textView);
-//        listItem = getResources().getStringArray(R.array.array_technology);
-//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, android.R.id.text1, listItem);
-//        listView.setAdapter(adapter);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                // TODO Auto-generated method stub
-//                String value=adapter.getItem(position);
-//                Toast.makeText(getApplicationContext(),value, Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//        //////
     }
 
     private void setUpRecyclerView() {

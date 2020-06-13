@@ -1,5 +1,6 @@
 package com.example.meddata;
 
+/*
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DownloadManager;
@@ -11,6 +12,9 @@ import android.content.Intent;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -19,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,32 +52,67 @@ import java.util.List;
 import java.util.Map;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
+*/
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button AddNewButton, RetrieveDataButton;
+    //private Button AddNewButton, RetrieveDataButton;
+    RecyclerView dataList;
+    Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AddNewButton = (Button) findViewById(R.id.add_new_button);
-        AddNewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddNewButton();
-            }
-        });
+        dataList = findViewById(R.id.dataList);
 
-        RetrieveDataButton = (Button) findViewById((R.id.retr_button));
-        RetrieveDataButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Retrieve_Visit();
-            }
-        });
+        List<String> titles = new ArrayList<>();
+        List<Integer> images = new ArrayList<>();
+        titles.add("Save new visit");
+        titles.add("Past visits");
+        titles.add("Med profile");
+        titles.add("Notes");
+        images.add(R.drawable.edit);
+        images.add(R.drawable.list);
+        images.add(R.drawable.profile);
+        images.add(R.drawable.notes);
+
+        adapter = new Adapter(this, titles, images);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        dataList.setLayoutManager(gridLayoutManager);
+        dataList.setAdapter(adapter);//set adapter to recyclerview
+
     }
+}
+
+//        dataList = findViewById(R.id.dataList);
+//        AddNewButton = (Button) findViewById(R.id.add_new_button);
+//        AddNewButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AddNewButton();
+//            }
+//        });
+//
+//        RetrieveDataButton = (Button) findViewById((R.id.retr_button));
+//        RetrieveDataButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Retrieve_Visit();
+//            }
+//        });
+//    }
 
     //Todo: Google/email Sign in part
         /*
@@ -111,13 +151,13 @@ public class MainActivity extends AppCompatActivity {
 //
 //    }
 
-    public void AddNewButton(){
-        Intent intent = new Intent(this, AddNew.class);
-        startActivity(intent);
-    }
-
-    public void Retrieve_Visit (){
-        Intent intent = new Intent(this, Retrieve_Visit.class);
-        startActivity(intent);
-    }
-}
+//    public void AddNewButton(){
+//        Intent intent = new Intent(this, AddNew.class);
+//        startActivity(intent);
+//    }
+//
+//    public void Retrieve_Visit (){
+//        Intent intent = new Intent(this, Retrieve_Visit.class);
+//        startActivity(intent);
+//    }
+//}

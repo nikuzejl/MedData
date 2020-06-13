@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Notes"></activity>
+        <activity android:name=".Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +20,7 @@
         </activity>
         <activity android:name=".AddNew" />
         <activity android:name=".Retrieve_Visit" />
-        <activity android:name=".DetailedVisit"/>
-        <activity android:name=".Display_Visit" />
+        <activity android:name=".DetailedVisit" />
         <activity android:name=".ManualData" />
     </application>
 
