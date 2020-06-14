@@ -66,6 +66,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                         profile(v);
                     else if (getAdapterPosition() == 3)
                         notes(v);
+                    else if(getAdapterPosition() == 4)
+                        bills(v);
                 }
             });
         }
@@ -89,5 +91,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void notes(View view){
         Intent intent = new Intent(view.getContext(), Notes.class);
         view.getContext().startActivity(intent);
+    }
+
+    public void bills(View view){
+        Intent intent = new Intent(view.getContext(), Bills.class);
+        view.getContext().startActivity(intent);
+
     }
 }

@@ -9,14 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Map;
 
 public class Profile extends AppCompatActivity {
     EditText glyc, bp, chol, herDis, alrg;
     Button save_profile;
-//    ArrayList<EditText> ids = new ArrayList<>();
-//    MainActivity.profile_info.put("key", "value");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +24,18 @@ public class Profile extends AppCompatActivity {
         save_profile = findViewById(R.id.save_profile);
 
         glyc.setText(MainActivity.profile_info.get("glycemia"));
-        //ids.add(glyc);
 
         bp = findViewById(R.id.bp);
         bp.setText(MainActivity.profile_info.get("blood_pressure"));
-       // ids.add(bp);
 
         chol= findViewById(R.id.chol);
         chol.setText(MainActivity.profile_info.get("cholesterol_level"));
-        //ids.add(chol);
 
         herDis = findViewById(R.id.herDis);
         herDis.setText(MainActivity.profile_info.get("hereditary_disease"));
-        //ids.add(herDis);
 
         alrg = findViewById(R.id.alrg);;
         alrg.setText(MainActivity.profile_info.get("allergies"));
-       // ids.add(alrg);
 
         glyc.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,29 +90,5 @@ public class Profile extends AppCompatActivity {
                 Toast.makeText(Profile.this, "Your changes have been saved", Toast.LENGTH_SHORT).show();
             }
         });
-        /*
-*/
-//        text_box.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                text_box.setCursorVisible(true);
-//            }
-//        });
-
-//        save_notes.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                MainActivity.saved_notes = text_box.getText();
-//                Toast.makeText(Notes.this, "Your changes have been saved", Toast.LENGTH_SHORT).show();
-//                text_box.setCursorVisible(false);
-//            }
-//        });
-
-//        for (Map.Entry<String, String> entry : MainActivity.profile_info.entrySet()) {
-//            key = entry.getKey();
-//            value = entry.getValue();
-//
-//
     }
-
 }
